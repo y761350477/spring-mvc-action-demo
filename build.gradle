@@ -19,4 +19,7 @@ dependencies {
     compile group: 'org.springframework', name: 'spring-web', version: '5.0.5.RELEASE'
     compile group: 'org.springframework', name: 'spring-webmvc', version: '5.0.5.RELEASE'
     compile group: 'org.springframework', name: 'spring-expression', version: '5.0.5.RELEASE'
+    // https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api
+    compile group: 'javax.servlet', name: 'javax.servlet-api', version: '4.0.0'
+
 }
