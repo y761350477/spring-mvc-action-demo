@@ -1,0 +1,26 @@
+发现:
+    1. @RequestMapping注解的方法返回list集合数据,是如何进行视图解析的,为什么没有报错?
+    answer:如果返回的是集合或者对象,需要映射路径对应视图名称便可正常访问:
+       ①返回视图名称和类访问名称必须一致;
+       ②和返回的类型没有关系;
+       ③返回集合可以直接传值,而不用Model之类的;
+       ④不局限于类映射,方法映射同样有效果;
+       ⑤映射路径不能是前后拼接的,只能是单一的,要么是类映射,要么是方法映射(例如jsp名称为index,映射名称不能是test/index);
+    2.为什么jsp中的EL表达式${param}只要访问了url拼接了参数就有参数值(参数名称和param不一样的情况)?
+    answer:
+        经过反复则是发现${param}获取url的参数信息,并不用映射路径中返回数据.
+    3.@ModelAttribute(value = "test")放在方法上的value值作用?
+    answer:
+        value表示数据把方法的返回值放入到model.key为test模型中.
+    4.@ModelAttribute(value = "test")放到参数中的value值作用?
+    answer:
+        @ModelAttribute("test") 用于向架要求放入key为 test的model属性，并且将该属性的值赋给新建立的对象,如果没有把请求参数为test的值赋值给新建立的对象.
+
+    5.Model中添加同属性的名称会更新之前的数据,而@ModelAttribute的效果恰恰相反,为最开始的数据.(经反复验证,此结论并不对,只是测试了两三次结果恰好是这种结论而已,经过更多次的尝试之后,发现Model中相同属性名后面的都会更新前面的数据)
+
+    6. @ModelAttribute总结:
+        1. @ModelAttribute注解的执行发生在映射方法请求之前.
+        2. @ModelAttribute有返回值的情况, 返回值默认会加入model模型中.
+        3. @ModelAttribute(value="test")在方法上时,表示当前方法的返回值放入到key为test的模型中.
+        4. @ModelAttribute(value="test")在参数中时,表示向已存在的模型中请求数据,如果存在key为test的模型,将数据给后面的参数,
+        如果不存在把URL请求中的参数给后面参数.
