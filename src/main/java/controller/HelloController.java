@@ -173,4 +173,22 @@ public class HelloController {
         return "redirect";
     }
 
+    // 异常的使用
+    @RequestMapping(value = "/no")
+    public String spittleNotFoundException() {
+        throw new SpittleNotFoundException();
+    }
+
+    // 此全局方案已在AppWideExceptionHandler类统一管理,而此方法之作用在当前类.
+    /*@ExceptionHandler(DuplicateSpittleException.class)
+    public String handleDuplicateSpittle() {
+        System.out.println("行走的方法");
+        return "error";
+    }*/
+
+    @RequestMapping(value = "/no1")
+    public String duplicateSpittleException() {
+        throw new DuplicateSpittleException();
+    }
+
 }
