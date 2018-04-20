@@ -41,5 +41,4 @@ public class WebConfig extends WebMvcConfigurationSupport {
         return new StandardServletMultipartResolver();
     }
 
-
 }

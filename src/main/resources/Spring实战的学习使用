@@ -8,7 +8,7 @@
        ⑤映射路径不能是前后拼接的,只能是单一的,要么是类映射,要么是方法映射(例如jsp名称为index,映射名称不能是test/index);
     2.为什么jsp中的EL表达式${param}只要访问了url拼接了参数就有参数值(参数名称和param不一样的情况)?
     answer:
-        经过反复则是发现${param}获取url的参数信息,并不用映射路径中返回数据.
+        经过反复测试发现${param}获取url的参数信息,并不用映射路径中返回数据.
     3.@ModelAttribute(value = "test")放在方法上的value值作用?
     answer:
         value表示数据把方法的返回值放入到model.key为test模型中.
