@@ -13,6 +13,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -126,6 +127,14 @@ public class HelloController {
 //        profilePicture.transferTo(new File("/" + profilePicture.getOriginalFilename()));
 //        System.out.println("获取上传文件名:\t" + profilePicture.getOriginalFilename());
         System.out.println(profilePicture.getSize());
+        File tempFile = new File("C:\\User\\ceek");
+        try {
+            // transferTo()方法指定生成文件
+            profilePicture.transferTo(tempFile);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return "error";
+        }
         if (errors.hasErrors()) {
             System.out.println("不符合条件!");
             return "register";

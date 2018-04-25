@@ -18,5 +18,6 @@ public class TestFilter implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         System.out.println("拦截器生效!");
+        chain.doFilter(request, response);
     }
 }
