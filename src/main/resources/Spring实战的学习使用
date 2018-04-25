@@ -24,3 +24,6 @@
         3. @ModelAttribute(value="test")在方法上时,表示当前方法的返回值放入到key为test的模型中.
         4. @ModelAttribute(value="test")在参数中时,表示向已存在的模型中请求数据,如果存在key为test的模型,将数据给后面的参数,
         如果不存在把URL请求中的参数给后面参数.
+
+    7. 基于java配置的spring-mvc中如何使用拦截器呢?
+    answer: 网上搜了很多教程,发现问题都不能用,大多数介绍的都是基于spring-boot中的拦截器配置,而不是基于java配置的.今天偶然兴致搜了一下,终于把困扰几天的东西解决了.

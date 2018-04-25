@@ -10,16 +10,16 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
  * @author YC
  * @create 2018/4/19 15:22.
  */
-@ControllerAdvice
-public class AppWideExceptionHandler {
-
-    @ExceptionHandler(DuplicateSpittleException.class)
-    public String duplicateSpittleHandler() {
-        return "error";
-    }
-
-    @ExceptionHandler(SpittleNotFoundException.class)
-    public String duplicateSpittleHandler1() {
-        return "error";
-    }
-}
+//@ControllerAdvice
+//public class AppWideExceptionHandler {
+//
+//    @ExceptionHandler(DuplicateSpittleException.class)
+//    public String duplicateSpittleHandler() {
+//        return "error";
+//    }
+//
+//    @ExceptionHandler(SpittleNotFoundException.class)
+//    public String duplicateSpittleHandler1() {
+//        return "error";
+//    }
+//}

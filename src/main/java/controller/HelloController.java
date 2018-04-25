@@ -105,7 +105,7 @@ public class HelloController {
 //    }
 
     // 注册页面
-    @RequestMapping("home")
+    @RequestMapping("/home")
     public String home() {
         return "register";
     }
@@ -176,19 +176,25 @@ public class HelloController {
     // 异常的使用
     @RequestMapping(value = "/no")
     public String spittleNotFoundException() {
-        throw new SpittleNotFoundException();
+        throw new DuplicateSpittleException();
     }
 
     // 此全局方案已在AppWideExceptionHandler类统一管理,而此方法之作用在当前类.
-    /*@ExceptionHandler(DuplicateSpittleException.class)
+    @ExceptionHandler(DuplicateSpittleException.class)
     public String handleDuplicateSpittle() {
         System.out.println("行走的方法");
         return "error";
-    }*/
+    }
+
+    @ExceptionHandler(DuplicateSpittleException1.class)
+    public String handleDuplicateSpittle1() {
+        System.out.println("行走的方法");
+        return "error";
+    }
 
     @RequestMapping(value = "/no1")
-    public String duplicateSpittleException() {
-        throw new DuplicateSpittleException();
+    public String duplicateSpittleException() throws DuplicateSpittleException1 {
+        throw new DuplicateSpittleException1();
     }
 
 }

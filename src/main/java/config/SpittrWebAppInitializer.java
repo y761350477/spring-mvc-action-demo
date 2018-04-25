@@ -2,6 +2,7 @@ package config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
+import javax.servlet.Filter;
 import javax.servlet.MultipartConfigElement;
 import javax.servlet.ServletRegistration;
 
@@ -29,4 +30,5 @@ public class SpittrWebAppInitializer extends AbstractAnnotationConfigDispatcherS
         registration.setMultipartConfig(
                 new MultipartConfigElement("C:/User/", 2097152, 4194304, 0));
     }
+
 }

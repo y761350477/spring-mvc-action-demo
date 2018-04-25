@@ -17,7 +17,7 @@ import java.io.IOException;
 // 启用Spring MVC Created by YC.
 @EnableWebMvc
 // 启用组件扫描 Created by YC.
-@ComponentScan("controller")
+@ComponentScan(basePackages = {"controller", "config"})
 public class WebConfig extends WebMvcConfigurationSupport {
 
     // 配置静态资源的处理 Created by YC.
